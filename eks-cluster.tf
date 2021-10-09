@@ -32,11 +32,14 @@ module "eks" {
       name                          = "frontend-group"
       instance_type                 = var.node_type_frontend
       asg_desired_capacity          = 2
+      subnet_ids                    = module.gk-eks-vpc.private_subnets
+      #.gk-eks-vpc.private_subnets.id
     },
     {
       name                          = "backend-group"
       instance_type                 = var.node_type_backend
       asg_desired_capacity          = 1
+      subnet_ids                    = module.gk-eks-vpc.public_subnets
     },
   ]
 }

@@ -41,3 +41,11 @@ module "gk-eks-vpc" {
     "kubernetes.io/role/internal-elb" = 1
   }
 }
+
+output "public_subnets" {
+  value = module.gk-eks-vpc.public_subnets
+}
+
+output "private_subnets" {
+  value = module.gk-eks-vpc.private_subnets
+}
