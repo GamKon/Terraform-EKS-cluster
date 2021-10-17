@@ -1,3 +1,4 @@
+/*
 data "aws_eks_cluster" "gk-cluster" {
   name = module.eks.cluster_id
 }
@@ -43,3 +44,4 @@ module "eks" {
     },
   ]
 }
+*/
